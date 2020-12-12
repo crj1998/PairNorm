@@ -84,5 +84,6 @@ if __name__ == "__main__":
     import sys
     print(sys.version)
     # test goes here
-    data = load_data(cuda=True)
+    data = load_data(data_name="citeseer", cuda=False)
+    print(type(data))
     print(data.train_mask[:150])
