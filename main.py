@@ -58,8 +58,8 @@ best_loss = 1e10
 for epoch in range(args.epochs):
     train_loss, train_acc = train(net, optimizer, criterion, data)
     val_loss, val_acc = val(net, criterion, data)
-    print('Epoch %d: train loss %.3f train acc: %.3f, val loss: %.3f val acc %.3f.'%
-                (epoch, train_loss, train_acc, val_loss, val_acc))
+    if(epoch%100==0):
+        print('Epoch %d: train loss %.3f train acc: %.3f, val loss: %.3f val acc %.3f.'% (epoch, train_loss, train_acc, val_loss, val_acc))
     # save model 
     if best_acc < val_acc:
         best_acc = val_acc
